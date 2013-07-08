@@ -6,6 +6,8 @@ Welcome to the Sipcentric developer documentation.
 
 We have a [Google Group](https://groups.google.com/a/sipcentric.com/forum/#!forum/developers)
 
+Just a little update.
+
 ###### **Info:** This is an info box, *may* be useful
 
 Some text
