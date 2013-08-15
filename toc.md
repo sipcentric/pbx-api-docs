@@ -16,4 +16,4 @@
   * [Python](/libraries#Python)
   * [Java](/libraries#Java)
 * [Examples](/examples)
-	* [Making a call](/examples/helloworld)
+	* [Hello World](/examples/helloworld)
