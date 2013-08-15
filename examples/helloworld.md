@@ -18,7 +18,9 @@ Then the "to" is obviously the number you want the call made to. This can be any
 
 Here is an example cURL request for initiating a call:
 
-	curl --user username:password -v -X POST -H "Content-Type: application/json" -d '{"type":"call","endpoint":"http://pbx.sipcentric.com/api/v1/customers/me/endpoints/12345","to":"07123456"}' http://pbx.sipcentric.com/api/v1/customers/me/calls
+	curl --user username:password -v -X POST -H "Content-Type: application/json" -d \
+	'{"type":"call","endpoint":"http://pbx.sipcentric.com/api/v1/customers/me/endpoints/12345","to":"07123456"}' \
+	http://pbx.sipcentric.com/api/v1/customers/me/calls
 
 ## Node.js
 
@@ -48,4 +50,4 @@ Here is an example cURL request for initiating a call:
 
 	call("0123456789");
 
-When the request is made you should get a 200 OK response back and the endpoint extension will start to ring.
+##### When the request is made you should get a 200 OK response back and the endpoint extension will start to ring.
