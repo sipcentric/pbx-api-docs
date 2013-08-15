@@ -1,6 +1,6 @@
 ### Contents
 
-##### API Docs
+##### [API Docs](/)
 
   * [Version 1](/api/v1)
     * [Introduction](/api/v1#Introduction)
@@ -15,3 +15,5 @@
   * [PHP](/libraries#PHP)
   * [Python](/libraries#Python)
   * [Java](/libraries#Java)
+* [Examples](/examples)
+	* [Making a call](/examples/makingacall)
