@@ -50,4 +50,4 @@ Here is an example cURL request for initiating a call:
 
 	call("0123456789");
 
-##### When the request is made you should get a 200 OK response back and the endpoint extension will start to ring.
+###### When the request is made you should get a 200 OK response back and the endpoint extension will start to ring.
