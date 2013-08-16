@@ -1,6 +1,6 @@
-### [Home](/)
+# [Home](/)
 
-### API
+# API
 
 * [Version 1](/api/v1)
   * [Introduction](/api/v1#Introduction)
@@ -8,7 +8,7 @@
   * [HTTP Methods](/api/v1#HTTPMethods)
   * [Reference](/api/v1/reference)
 
-### Other
+# Other
 
 * [Client Libraries](/libraries)
   * [JavaScript](/libraries#Javascript)
