@@ -1,0 +1,518 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body{
+  color:#444;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 1em;
+  outline: 1300px solid #FAFAFA;
+}
+
+a{ color: #0645ad; text-decoration:none;}
+a:visited{ color: #0b0080; }
+a:hover{ color: #06e; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+span.backtick {
+  border:1px solid #EAEAEA;
+  border-radius:3px;
+  background:#F8F8F8;
+  padding:0 3px 0 3px;
+}
+
+::-moz-selection{background:rgba(255,255,0,0.3);color:#000}
+::selection{background:rgba(255,255,0,0.3);color:#000}
+
+a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
+a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
+
+p{
+margin:1em 0;
+}
+
+img{
+max-width:100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-weight:normal;
+color:#111;
+line-height:1em;
+}
+h4,h5,h6{ font-weight: bold; }
+h1{ font-size:2.5em; }
+h2{ font-size:2em; border-bottom:1px solid silver; padding-bottom: 5px; }
+h3{ font-size:1.5em; }
+h4{ font-size:1.2em; }
+h5{ font-size:1em; }
+h6{ font-size:0.9em; }
+
+blockquote{
+color:#666666;
+margin:0;
+padding-left: 3em;
+border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+
+pre , code, kbd, samp { 
+  color: #000; 
+  font-family: monospace; 
+  font-size: 0.88em; 
+  border-radius:3px;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC; 
+}
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 5px 12px;}
+pre code { border: 0px !important; padding: 0;}
+code { padding: 0 3px 0 3px; }
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+li p:last-child { margin:0 }
+dd { margin: 0 0 0 2em; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+@media only screen and (min-width: 480px) {
+body{font-size:14px;}
+}
+
+@media only screen and (min-width: 768px) {
+body{font-size:16px;}
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{font-size:12pt; max-width:100%; outline:none;}
+  a, a:visited { text-decoration: underline; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page :left { margin: 15mm 20mm 15mm 10mm; }
+  @page :right { margin: 15mm 10mm 15mm 20mm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>v1</title></head><body><h1 id="api-v1">API V1</h1>
+<h2 id="reference">Reference</h2>
+<h3 id="phonebook">/phonebook</h3>
+<p>A really cool Sipcentric feature is the phone book!</p>
+<h4 id="list-phone-book-entries">List phone book entries</h4>
+<p><code>GET /phonebook</code></p>
+<table>
+<thead>
+<tr>
+<th>Query String Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pageSize</code></td>
+<td>int</td>
+<td>The number of items to include per page (max 200)</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>int</td>
+<td>The page number to return</td>
+</tr>
+</tbody>
+</table>
+<h4 id="create-phone-book-entry">Create phone book entry</h4>
+<p><code>POST /phonebook</code></p>
+<table>
+<thead>
+<tr>
+<th>JSON Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>str</td>
+<td>phonebookentry</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>str</td>
+<td>Name of contact</td>
+</tr>
+<tr>
+<td><code>phoneNumber</code></td>
+<td>str</td>
+<td>Phone number for entry</td>
+</tr>
+<tr>
+<td><code>speedDial</code></td>
+<td>int</td>
+<td>Optional speed dial key</td>
+</tr>
+</tbody>
+</table>
+<h4 id="read-phone-book-entry">Read phone book entry</h4>
+<p><code>GET /phonebook/{id}</code></p>
+<h4 id="delete-phone-book-entry">Delete phone book entry</h4>
+<p><code>DELETE /phonebook/{id}</code></p>
+<h3 id="sms">/sms</h3>
+<p>Short Message Service (SMS) is a text messaging service. You can send and receive SMS messages on our platform.</p>
+<h4 id="list-sms-messages">List SMS messages</h4>
+<p><code>GET /sms</code></p>
+<table>
+<thead>
+<tr>
+<th>Query String Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pageSize</code></td>
+<td>int</td>
+<td>The number of items to include per page (max 200)</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>int</td>
+<td>The page number to return</td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
+<pre><code>GET https://pbx.sipcentric.com/api/v1/customers/me/sms?pageSize=1&amp;page=1
+</code></pre>
+
+<p>Example response:</p>
+<pre><code>HTTP/1.1 200 OK
+
+{
+  &quot;totalItems&quot;: 188,
+  &quot;pageSize&quot;: 1,
+  &quot;page&quot;: 1,
+  &quot;items&quot;:  [
+     {
+      &quot;type&quot;: &quot;smsmessage&quot;,
+      &quot;uri&quot;: &quot;http://pbx.sipcentric.com/api/v1/customers/5/sms/253368&quot;,
+      &quot;created&quot;: &quot;2014-05-14T14:58:39.000+0000&quot;,
+      &quot;direction&quot;: &quot;out&quot;,
+      &quot;from&quot;: &quot;01212854400&quot;,
+      &quot;to&quot;: &quot;07557400000&quot;,
+      &quot;body&quot;: &quot;Hey, this new API is awesome!&quot;,
+      &quot;sendStatus&quot;: &quot;sent&quot;,
+      &quot;deliveryStatus&quot;: 1,
+      &quot;cost&quot;: 0.1
+    }
+  ],
+  &quot;nextPage&quot;: &quot;http://pbx.sipcentric.com/api/v1/customers/me/sms?pageSize=1&amp;page=2&quot;
+}
+</code></pre>
+
+<h4 id="get-sms-message">Get SMS Message</h4>
+<p><code>GET /sms/{smsId}</code></p>
+<pre><code>GET https://pbx.sipcentric.com/api/v1/customers/5/sms/253368
+</code></pre>
+
+<p>Example response:</p>
+<pre><code>HTTP/1.1 200 OK
+
+{
+  &quot;type&quot; : &quot;smsmessage&quot;,
+  &quot;uri&quot; : &quot;http://pbx.sipcentric.com/api/v1/customers/5/sms/253368&quot;,
+  &quot;created&quot; : &quot;2014-05-14T14:58:39.000+0000&quot;,
+  &quot;direction&quot; : &quot;out&quot;,
+  &quot;from&quot; : &quot;Sipcentric&quot;,
+  &quot;to&quot; : &quot;07557400000&quot;,
+  &quot;body&quot; : &quot;Hey, this new API is awesome!&quot;,
+  &quot;sendStatus&quot; : &quot;sent&quot;,
+  &quot;deliveryStatus&quot; : 1,
+  &quot;cost&quot; : 0.100
+}
+</code></pre>
+
+<p>Will retrieve a single SMS message.</p>
+<h4 id="send-sms">Send SMS</h4>
+<p><code>POST /sms</code></p>
+<table>
+<thead>
+<tr>
+<th>JSON Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>str</td>
+<td>smsmessage</td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td>str</td>
+<td>Number to send message to</td>
+</tr>
+<tr>
+<td><code>from</code></td>
+<td>str</td>
+<td>Name to display message from</td>
+</tr>
+<tr>
+<td><code>body</code></td>
+<td>str</td>
+<td>Message body</td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
+<pre><code>POST https://pbx.sipcentric.com/api/v1/customers/me/sms
+
+{
+  &quot;type&quot;: &quot;smsmessage&quot;,
+  &quot;to&quot;: &quot;07557400000&quot;,
+  &quot;from&quot;: &quot;01212854400&quot;,
+  &quot;body&quot;: &quot;Hey, this new API is awesome!&quot;
+}
+</code></pre>
+
+<p>Example response:</p>
+<pre><code>HTTP/1.1 201 Created
+
+{
+  &quot;type&quot;: &quot;smsmessage&quot;,
+  &quot;uri&quot;: &quot;http://pbx.sipcentric.com/api/v1/customers/me/sms/253368&quot;,
+  &quot;direction&quot;: &quot;out&quot;,
+  &quot;from&quot;: &quot;01212854400&quot;,
+  &quot;to&quot;: &quot;07557400000&quot;,
+  &quot;body&quot;: &quot;Hey, this new API is awesome!&quot;,
+  &quot;sendStatus&quot;: &quot;sent&quot;,
+  &quot;deliveryStatus&quot;: 0,
+  &quot;cost&quot;: 0.1
+}
+</code></pre>
+
+<h3 id="calls">/calls</h3>
+<p>List and make phone calls.</p>
+<h4 id="originate-call">Originate call</h4>
+<p><code>POST /calls</code></p>
+<table>
+<thead>
+<tr>
+<th>JSON Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>str</td>
+<td>call</td>
+</tr>
+<tr>
+<td><code>endpoint</code></td>
+<td>str</td>
+<td>Number to originate call from</td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td>str</td>
+<td>Number to call</td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
+<pre><code>POST https://pbx.sipcentric.com/api/v1/customers/me/calls
+
+{
+  &quot;type&quot;: &quot;call&quot;,
+  &quot;endpoint&quot;: &quot;http://pbx.sipcentric.com/api/v1/customers/me/endpoints/1234&quot;,
+  &quot;to&quot;: &quot;07557400000&quot;,
+}
+</code></pre>
+
+<p>Example response:</p>
+<pre><code>HTTP/1.1 200 OK
+</code></pre>
+
+<h4 id="get-call-history">Get call history</h4>
+<p><code>GET /calls</code></p>
+<table>
+<thead>
+<tr>
+<th>Query String Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>createdAfter</code></td>
+<td>str</td>
+<td>Include only records created after the specified date/time (inclusive). Required format is ISO8601 in UTC - e.g. '2014-05-14T13:26:45Z'</td>
+</tr>
+<tr>
+<td><code>createdBefore</code></td>
+<td>str</td>
+<td></td>
+</tr>
+<tr>
+<td><code>startedAfter</code></td>
+<td>str</td>
+<td></td>
+</tr>
+<tr>
+<td><code>from</code></td>
+<td>str</td>
+<td></td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td>str</td>
+<td></td>
+</tr>
+<tr>
+<td><code>direction</code></td>
+<td>str</td>
+<td>in/out</td>
+</tr>
+<tr>
+<td><code>includeLocal</code></td>
+<td>str</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td><code>pageSize</code></td>
+<td>int</td>
+<td>The number of items to include per page (max 200)</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>int</td>
+<td>The page number to return</td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
+<pre><code>GET https://pbx.sipcentric.com/api/v1/customers/me/calls?pageSize=1
+</code></pre>
+
+<p>Example response:</p>
+<pre><code>HTTP/1.1 200 OK
+
+{
+  &quot;totalItems&quot;: 23686,
+  &quot;pageSize&quot;: 1,
+  &quot;page&quot;: 1,
+  &quot;items&quot;: [
+    {
+      &quot;type&quot;: &quot;call&quot;,
+      &quot;uri&quot;: &quot;https://pbx.sipcentric.com/api/v1/customers/me/calls/7592317&quot;,
+      &quot;created&quot;: &quot;2014-05-15T08:21:12.000+0000&quot;,
+      &quot;callType&quot;: &quot;domain&quot;,
+      &quot;direction&quot;: &quot;IN&quot;,
+      &quot;from&quot;: &quot;01212854400&quot;,
+      &quot;to&quot;: &quot;07557400000&quot;,
+      &quot;callStarted&quot;: &quot;2014-05-15T08:20:51.000+0000&quot;,
+      &quot;outcome&quot;: &quot;no-answer&quot;,
+      &quot;duration&quot;: 0,
+      &quot;cost&quot;: 0,
+      &quot;callId&quot;: &quot;ast01-1400142051.1562723&quot;,
+      &quot;linkedId&quot;: &quot;ast01-1400142051.1562723&quot;,
+      &quot;links&quot;: {
+        &quot;recordings&quot;: &quot;https://pbx.sipcentric.com/api/v1/customers/me/recordings?linkedId=ast01-1400142051.1562723&quot;
+      }
+    }
+  ],
+  &quot;nextPage&quot;: &quot;https://pbx.sipcentric.com/api/v1/customers/me/calls?pageSize=1&amp;page=2&quot;
+}
+</code></pre>
+
+<p>Will retrieve a single call.</p>
+<h3 id="sounds">/sounds</h3>
+<h4 id="list-sounds">List sounds</h4>
+<p><code>GET /sounds</code></p>
+<table>
+<thead>
+<tr>
+<th>Query String Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pageSize</code></td>
+<td>int</td>
+<td>The number of items to include per page (max 200)</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>int</td>
+<td>The page number to return</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>str</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
+<pre><code>GET https://pbx.sipcentric.com/api/v1/customers/me/sms?pageSize=1&amp;page=1
+</code></pre>
+
+<p>Example response:</p>
+<pre><code>HTTP/1.1 200 OK
+
+{
+  &quot;totalItems&quot;: 188,
+  &quot;pageSize&quot;: 1,
+  &quot;page&quot;: 1,
+  &quot;items&quot;:  [
+     {
+      &quot;type&quot;: &quot;smsmessage&quot;,
+      &quot;uri&quot;: &quot;http://pbx.sipcentric.com/api/v1/customers/5/sms/253368&quot;,
+      &quot;created&quot;: &quot;2014-05-14T14:58:39.000+0000&quot;,
+      &quot;direction&quot;: &quot;out&quot;,
+      &quot;from&quot;: &quot;01212854400&quot;,
+      &quot;to&quot;: &quot;07557400000&quot;,
+      &quot;body&quot;: &quot;Hey, this new API is awesome!&quot;,
+      &quot;sendStatus&quot;: &quot;sent&quot;,
+      &quot;deliveryStatus&quot;: 1,
+      &quot;cost&quot;: 0.1
+    }
+  ],
+  &quot;nextPage&quot;: &quot;http://pbx.sipcentric.com/api/v1/customers/me/sms?pageSize=1&amp;page=2&quot;
+}
+</code></pre></body></html>
