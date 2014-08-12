@@ -1,4 +1,4 @@
-# Go
+# Go Client
 
 A third party client implementaion for Go.
 

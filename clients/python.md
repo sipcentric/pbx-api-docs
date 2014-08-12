@@ -1,4 +1,4 @@
-# Python
+# Python Client
 
 Project home and source code over on [GitHub](https://github.com/sipcentric/sc-lib-python)
 
