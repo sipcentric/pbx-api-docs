@@ -1,12 +1,12 @@
 ### Introduction
 
-The Sipcentric PBX is a cloud-based phone service...
+The [Sipcentric PBX](http://www.sipcentric.com/) is a cloud-based service which enables businesses of all shapes and sizes to create a fully-featured, virtual PBX in minutes - allowing them to scale up or down instantly as their needs change and without commitment.
 
-The Sipcentric Developer API, based around [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) principles, allows users to interact with core features of the Sipcentric PBX platform and integrate with their own applications. The API makes it possible to programtically manage features, query data and perform more interesting things such as initiating calls, sending text messages and hooking into specific realtime events and notifications (perfect for [screen popping](http://en.wikipedia.org/wiki/Screen_pop)).
+The Developer API, based around [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) principles, allows users to interact with core features of the Sipcentric PBX platform and integrate with their own applications. The API makes it possible to programmatically manage features, query data and perform more interesting things such as initiating calls, sending text messages and hooking into specific real-time events and notifications (perfect for [screen popping](http://en.wikipedia.org/wiki/Screen_pop)).
 
 ### Current Version
 
-The current stable version is V1 and its base URL is:
+The current stable version is v1 and is located at:
 
 ```
 https://pbx.sipcentric.com/api/v1
@@ -16,7 +16,11 @@ Because the API follows many common REST design patterns, it is extremely easy t
 
 ### Example Uses
 
-### Best Practices
+There are many ways in which developers can integrate their own applications with the Sipcentric PBX.
+
+Some of our partners are using it to import their customer call records and other data into their own systems. We are also aware of some of our call centre customers using it to display real-time statistics on their wall displays, as well as integrating with in-house CRM systems. But the possibilities are virtually endless.
+
+As a basic example of what can be achieved, we have developed the [Chrome Extension](http://www.sipcentric.com/internet-phone-service/google-chrome-extension/), available in the [Chrome Web Store](https://chrome.google.com/webstore/detail/sipcentric-for-chrome/kpiopepamhnnileoefikeakookcblmpc). The code is also available on [GitHub](https://github.com/sipcentric/chrome-extension).
 
 ### Getting Started
 
