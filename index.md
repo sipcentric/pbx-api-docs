@@ -4,6 +4,12 @@ The [Sipcentric PBX](http://www.sipcentric.com/) is a cloud-based service which 
 
 The Developer API, based around [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) principles, allows users to interact with core features of the Sipcentric PBX platform and integrate with their own applications. The API makes it possible to programmatically manage features, query data and perform more interesting things such as initiating calls, sending text messages and hooking into specific real-time events and notifications (perfect for [screen popping](http://en.wikipedia.org/wiki/Screen_pop)).
 
+#### Getting help
+
+We have a developer group over on [Google Groups](https://groups.google.com/forum/#!forum/sipcentric-developers), where you can ask questions and share ideas.
+
+You can also chat with us on [irc.freenode.net](http://webchat.freenode.net/?channels=sipcentric) #sipcentric
+
 ### Current Version
 
 The current stable version is v1 and is located at:
